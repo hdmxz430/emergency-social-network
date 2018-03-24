@@ -1,4 +1,10 @@
-# f17-ESN-SA4
+# Emergency Social Network
+
+## Start the app
+
+In order to start the application, first use npm install to install all the modules needed.
+
+Then type node app.js to start the application.
 
 ## API Docs
 
