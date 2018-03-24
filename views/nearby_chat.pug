@@ -1,0 +1,65 @@
+extends layout
+
+block links
+    link(rel='stylesheet', href='/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/chatroom.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/AdminLTE.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/nearby_chat.css')
+block content
+    body
+        .container
+            include ./sidebar.pug
+                button.btn.btn-sm#exit_btn(data-toggle="modal" data-target="#confirmModal")
+                    i.fa.fa-sign-out.fa-2x
+                button.btn.btn-sm#user_list_btn(data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse")
+                    i.fa.fa-user-o.fa-2x
+
+            .collapse#collapse
+                .row
+                    .col-sm-8.col-sm-offset-2
+                        .box.box-primary.direct-chat.direct-chat-primary
+                            .box-header.with-border
+                                h3.box-title User List:
+                            ul.list-group#user_list(style='padding: 10px;')
+            div#contain
+
+            .row
+                .col-sm-12
+                    .box.box-info.direct-chat.direct-chat-info
+                        .box-header.with-border
+                            h3.box-title Welcome:
+                            h3#current_user.box-title=currentUser
+                        .box-body
+                            #chatMessages.direct-chat-messages
+                        .box-footer
+                            .form
+                                #warningDiv
+                                .input-group
+                                    input#m.form-control(placeholder='type message', type='text')
+                                    span.input-group-btn
+                                        button#submit.btn.btn-primary(type='submit') Send
+                                    span.input-group-btn
+                                        button#upload.btn.btn-default(type="button")
+                                            span.glyphicon.glyphicon-camera(aria-hidden="true")
+                                #previewDiv.image-Upload
+                                    canvas#preview
+                                    button#cancelIMG.btn.btn-danger(type="button") Cancel
+            .row.image-Upload
+                input#file.image-Upload(type="file" accept="image/*")
+        .modal.fade#confirmModal(tabindex="-1" role="dialog" aria-labelledby="confirmLabel")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        button.close(type='button' data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden='true') &times;
+                        h4.modal-title#confirmLabel Dismiss Group
+                    .modal-body
+                        p Confirm to dismiss the group chat. All of the history messages will deleted.
+                    .modal-footer
+                        button.btn.btn-default(type="button" data-dismiss="modal") Close
+                        button.btn.btn-danger(type='button' onclick='confirmToDismiss()') Confirm to dismiss group
+
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/nearby_chat.js')
+        script(src='/js/imageUpload.js')

@@ -1,0 +1,22 @@
+extends layout
+
+block links
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+    link(href='/stylesheets/nearby_users.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    .container
+        #map
+        br
+        .panel.panel-info.listPanel
+            .panel-heading
+                h3.panel-title Group Chats
+            .panel-body
+                .list-group
+                #hint_message(style='display:none') There is no group for now.
+
+        button#askhelp.btn.btn-warning.btn-block(style='margin-bottom:10px') Ask For Helper
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/nearby_users.js')
+    script(src="//maps.googleapis.com/maps/api/js?key=AIzaSyAeyEU-Gmb3s6yP7HtP2gNLTr_lSYq6ucc&callback=initMap")
+

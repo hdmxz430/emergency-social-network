@@ -1,0 +1,46 @@
+link(rel='stylesheet', type='text/css', href='/stylesheets/sidebar_beta.css')
+link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' type='text/css')
+
+nav#sidebar
+    .sidebar-header
+        h3 ESN
+    ul.list-unstyled.components
+        p#currentuser=currentUser
+        li
+            a#gotoDirectory
+                span.sidenav-link-title Directory
+        li
+            a#gotoChatPublic
+                span.sidenav-link-title Chat Public
+        li
+            a#gotoUserProfile
+                span.sidenav-link-title User Profile
+        li
+            a#gotoAnnouncement
+                span.sidenav-link-title Announcement
+        li
+            a#gotoDangerousZone
+                span.sidenav-link-title Update Dangerous Zone
+        li
+            a#gotoShowDangerousZone
+                span.sidenav-link-title Show Dangerous Zone
+        li
+            a#gotoPoll
+                span.sidenav-link-title Poll
+        li
+            a#gotoNearby
+                span.sidenav-link-title Nearby
+        li
+            a#logOut
+                span.sidenav-link-title Logout
+
+nav.navbar.navbar_default#nav_bar
+    .container-fluid
+        .navbar-header
+            button#sidebarCollapse.btn.btn-info.navbar-btn(type="button")
+                i.material-icons menu
+
+.overlay(style="display: none;")
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js")
+script(src="/js/sidebar.js")

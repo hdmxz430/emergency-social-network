@@ -1,0 +1,21 @@
+{
+  "development": {
+    "PORT": 3000,
+    "DB_URI": "mongodb://localhost:27017/ESN",
+    "SALT": "123123"
+  },
+  "test": {
+    "PORT": 3000,
+    "DB_URI": "mongodb://localhost:27017/ESNTest",
+    "SALT": "123123"
+  },
+  "production": {
+    "PORT": 3000,
+    "DB_URI": "mongodb://heroku_hqz4p4gk:oh5h0ujdir9m9vr2dtpf7s5dtg@ds121225.mlab.com:21225/heroku_hqz4p4gk",
+    "SALT": "VerySecret"
+  },
+  "INITIAL_USER": {
+    "username": "ESNAdmin",
+    "password": "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec"
+  }
+}

@@ -1,0 +1,31 @@
+extends layout
+block links
+    link(rel='stylesheet', type='text/css', href='/stylesheets/announcement.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/search_style.css')
+
+block content
+    body
+        include ./sidebar.pug
+        .container
+            .input-group
+                input.form-control#searchwords(type="text" placeholder="Search for...")
+                span.input-group-btn
+                    button.btn.btn-default#btn_search(type='button') Go
+            br
+            .panel.panel-info#announcement_panel
+                .panel-heading
+                    h3.panel-title Latest Announcement
+                .panel-body
+                    #ann_announcement_panel
+                    #hint_message(style='display:none')
+                    #search_pager(style='display:none')
+                        include ./pager.pug
+            .panel.panel-info.listPanel#write_ann(style='display:none')
+                .panel-heading
+                    h3.panel-title Post Announcement
+                .panel-body
+                    textarea#content_text.form-control(rows='3')
+                    button#send.btn.btn-primary.pull-right(style='margin-top:5px', type='button') Send
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/libs/jquery.paging.min.js')
+    script(src='/js/announcement.js')

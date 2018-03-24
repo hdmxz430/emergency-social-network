@@ -1,0 +1,21 @@
+extends layout
+
+block links
+    link(href='/font-awesome-4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    //link(href='/stylesheets/dashboard.css', rel='stylesheet')
+    link(href='/stylesheets/admin_control.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    div#contain
+    .container
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12.feature-panel
+                .panel.panel-info.listPanel
+                    .panel-heading
+                        h3.panel-title User List
+                    .panel-body.feature-list
+                        #user_List.list-group
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/directory.js')
+    script(src='/js/admin_control.js')

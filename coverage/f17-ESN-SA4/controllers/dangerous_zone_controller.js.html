@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for f17-ESN-SA4/controllers/dangerous_zone_controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">f17-ESN-SA4/controllers/</a> dangerous_zone_controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.82% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/68</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const DangerousZone = require('../models/dangerous_zone');
+const moment = require("moment");
+const User = require('../models/user');
+const dis = require('./distance');
+&nbsp;
+&nbsp;
+//let twoMiles = 1609;
+&nbsp;
+let twoMiles = mileToMeters(2);
+//let twoHours = hourToTimestamp(2);
+let smallHours = hourToTimestamp(1/60);
+//let halfMiles = mileToMeters(0.5);
+let smallMiles = mileToMeters(0.0001);
+&nbsp;
+function mileToMeters(mile){
+    return mile * 1609.34;
+}
+&nbsp;
+function hourToTimestamp(hour){
+    return hour * 3600000;
+}
+&nbsp;
+let gotoDangerousZone = (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    res.render('dangerous_zone');</span>
+};
+&nbsp;
+let gotoShowDangerousZone = (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    res.render('show_dangerous_zone');</span>
+};
+&nbsp;
+let reportDangerousZone = (req, res) =&gt; {
+<span class="cstat-no" title="statement not covered" >    let lat = req.query.lat;</span>
+<span class="cstat-no" title="statement not covered" >    let lng = req.query.lng;</span>
+<span class="cstat-no" title="statement not covered" >    res.render('report_dangerous_zone', {lat: lat, lng: lng});</span>
+};
+&nbsp;
+let getDangerousZoneAround = (req, res) =&gt; {
+    let lat = req.query.lat;
+    let lng = req.query.lng;
+    let timestamp = moment.now().valueOf();
+    console.log('timestamp type is:' + typeof(timestamp));
+    DangerousZone.getAllDangerousZone().then((dangerousZoneList) =&gt; {
+        console.log('list is:' + dangerousZoneList);
+        let aroundList = new Array();
+        let index = 0;
+        for(let i = 0; i &lt; dangerousZoneList.length; i++){
+            let distance = dis.getFlatternDistance(parseFloat(lat), parseFloat(lng), parseFloat(dangerousZoneList[i].lat), parseFloat(dangerousZoneList[i].lng));
+            console.log('distance is:' + distance);
+            console.log('saved type is:' + typeof(dangerousZoneList[i].timestamp));
+            let timeDiff = timestamp - dangerousZoneList[i].timestamp;
+            console.log('timeDiff is:' + timeDiff);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(distance &lt; twoMiles &amp;&amp; timestamp - dangerousZoneList[i].timestamp &lt; smallHours){
+<span class="cstat-no" title="statement not covered" >                let thisDangerousZone = {lat: dangerousZoneList[i].lat, lng: dangerousZoneList[i].lng, description: dangerousZoneList[i].description};</span>
+<span class="cstat-no" title="statement not covered" >                aroundList[index] = thisDangerousZone;</span>
+<span class="cstat-no" title="statement not covered" >                index++;</span>
+            }
+        }
+        return aroundList;
+    }).catch((err) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log(err);</span>
+<span class="cstat-no" title="statement not covered" >        res.status(400).send({message: err});</span>
+    }).then((around) =&gt; {
+        res.send({status: 200, aroundDangerousList: around});
+    });
+};
+&nbsp;
+let saveDangerousZone = (req, res) =&gt; {
+    let lat = req.body.lat;
+    let lng = req.body.lng;
+    let description = req.body.des;
+    let sender = req.body.sender;
+    let timestamp = moment.now().valueOf();
+    const io = require('../app').io;
+    DangerousZone.getAllDangerousZone().then((dangerousZoneList) =&gt; {
+        console.log('list is:' + dangerousZoneList);
+        let i;
+        for(i = 0; i &lt; dangerousZoneList.length; i++){
+            let distance = dis.getFlatternDistance(parseFloat(lat), parseFloat(lng), parseFloat(dangerousZoneList[i].lat), parseFloat(dangerousZoneList[i].lng));
+            console.log('distance=' + distance);
+            if(distance &lt; smallMiles){
+                break;
+            }
+        }
+        if(i == dangerousZoneList.length){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    }).catch((err) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log(err);</span>
+    }).then((result) =&gt; {
+        if(result == 1){
+            DangerousZone.saveDangerousZone(lat, lng, description, timestamp);
+            User.getAllowWarnList(lat, lng).then((userList) =&gt; {
+                io.emit('broadcast dangerous', {sender: sender, included: userList});
+            });
+            res.status(200).send({status: 200});
+        }
+        else{
+            res.status(400).send({status: 400});
+        }
+    });
+};
+&nbsp;
+module.exports = {gotoDangerousZone, gotoShowDangerousZone, reportDangerousZone, saveDangerousZone, getDangerousZoneAround};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 29 2017 10:56:46 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

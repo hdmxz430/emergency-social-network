@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for f17-ESN-SA4/controllers/search_info_controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">f17-ESN-SA4/controllers/</a> search_info_controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>53/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>53/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const User = require('../models/user');
+const Annoucement = require('../models/announcement');
+const PubMessage = require('../models/message');
+const PriMessage = require('../models/private_message');
+const {_analyzer} = require('../models/englishStopWords');
+const {defaultErr} = require('./utils');
+&nbsp;
+const limit_number = 10;
+&nbsp;
+let searchUserByUsername = (req, res) =&gt; {
+    let username = req.query.username;
+    let page = req.query.page;
+    let username_list_after_filter = _analyzer(username);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (username_list_after_filter == '') {
+<span class="cstat-no" title="statement not covered" >        return res.status(201).send({message: []});</span>
+    }
+    let skip_number = page * limit_number;
+&nbsp;
+    User.findByUsername(username_list_after_filter, skip_number, limit_number)
+        .then(function (userList) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (userList.length === 0) {
+<span class="cstat-no" title="statement not covered" >                return res.status(201).send({message: []});</span>
+            }
+&nbsp;
+            res.status(200).send({message: userList});
+        });
+};
+&nbsp;
+let searchUserByStatus = (req, res) =&gt; {
+    let status = req.query.status;
+    let page = req.query.page;
+    let skip_number = page * limit_number;
+    User.findByStatus(status, skip_number, limit_number)
+        .then(function (userList) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (userList.length === 0) {
+<span class="cstat-no" title="statement not covered" >            return res.status(201).send({message: []});</span>
+        }
+        res.status(200).send({message: userList});
+    });
+&nbsp;
+};
+&nbsp;
+let searchAnnoucementByAnnounce = (req, res) =&gt; {
+    let announcement = req.query.announcement;
+    let page = req.query.page;
+    let announcement_list_after_filter = _analyzer(announcement);
+    if (announcement_list_after_filter == '') {
+        return res.status(201).send({message: []});
+    }
+    let skip_number = page * limit_number;
+    Annoucement.findByAnnouncement(announcement_list_after_filter, skip_number, limit_number)
+        .then(function (announcement) {
+            res.status(200).send({message: announcement});
+        }).catch(err =&gt; <span class="cstat-no" title="statement not covered" >defaultErr(err, res))</span>;
+};
+&nbsp;
+let searchPubMessageByMessage = (req, res) =&gt; {
+    let pubMessage = req.query.message;
+    let page = req.query.page;
+    let skip_number = page * limit_number;
+    let message_list_after_filter = _analyzer(pubMessage);
+    if (message_list_after_filter == '') {
+        return res.status(201).send({message: []});
+    }
+    /*
+    for(let i = 0 ; i &lt; message_list_after_filter.length; i++){
+        console.log('message is:' + message_list_after_filter[i] + "ends");
+    }
+    */
+    PubMessage.findByPublicMessage(message_list_after_filter, skip_number, limit_number).then(function (messageList) {
+        res.status(200).send({message: messageList});
+    });
+};
+&nbsp;
+let searchPriMessageByMessage = (req, res) =&gt; {
+    let priMessage = req.query.message;
+    let page = req.query.page;
+    let current_user = req.query.current_user;
+    let chat_mate = req.query.chat_mate;
+    let skip_number = page * limit_number;
+    let message_list_after_filter = _analyzer(priMessage);
+    if (message_list_after_filter == '') {
+        return res.status(201).send({message: []});
+    }
+    PriMessage.findByPrivateMessage(message_list_after_filter, skip_number, limit_number, current_user, chat_mate).then(function (messageList) {
+        res.status(200).send({message: messageList});
+    });
+};
+&nbsp;
+module.exports = {
+    searchUserByUsername,
+    searchUserByStatus,
+    searchAnnoucementByAnnounce,
+    searchPubMessageByMessage,
+    searchPriMessageByMessage
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 29 2017 10:56:46 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

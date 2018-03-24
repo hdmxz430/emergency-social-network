@@ -1,0 +1,65 @@
+extends layout
+
+block links
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+    link(href='/stylesheets/profile.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    .container
+        .panel.panel-info.listPanel
+            .panel-heading
+                h3.panel-title User Profile
+            .panel-body
+                .list-group
+                    li.list-group-item
+                        .row
+                            .col-xs-6
+                                p.text-left(style='margin: 4px 0') Username
+                            .col-xs-6
+                                p#username.text-right(style='margin: 4px 0')
+                    li.list-group-item
+                        .row
+                            .col-xs-6
+                                p.text-left(style='margin: 4px 0') Latitude
+                            .col-xs-6
+                                p#latitude.text-right(style='margin: 4px 0')
+                    li.list-group-item
+                        .row
+                            .col-xs-6
+                                p.text-left(style='margin: 4px 0') Longitude
+                            .col-xs-6
+                                p#longitude.text-right(style='margin: 4px 0')
+                    li.list-group-item
+                        .row
+                            .col-xs-8
+                                p#status_text.text-left(style='margin: 4px 0') Status:
+                            .col-xs-4
+                                .dropdown.text-right
+                                    button.btn.btn-sm.dropdown-toggle#dropdownMenu(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                                        | Status
+                                        span.caret
+                                    ul#status_list.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu')
+                                        li(index='1')
+                                            a OK
+                                        li(index='2')
+                                            a Help
+                                        li(index='3')
+                                            a Emergency
+                    li.list-group-item
+                        .row
+                            .col-xs-8
+                                p#warn_text.text-left(style='margin: 4px 0') Allow Warn:
+                            .col-xs-4
+                                .dropdown.text-right
+                                    button.btn.btn-sm.dropdown-toggle#allowWarndropdownMenu(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                                        | AllowWarn
+                                        span.caret
+                                    ul#warn_list.dropdown-menu.dropdown-menu-right(aria-labelledby='allowWarndropdownMenu')
+                                        li(index='1')
+                                            a allowed
+                                        li(index='2')
+                                            a not allowed
+                                        
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/user_profile.js')
+

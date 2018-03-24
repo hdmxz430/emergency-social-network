@@ -1,0 +1,91 @@
+extends layout
+
+block links
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+    link(href='/font-awesome-4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/stylesheets/dashboard.css', rel='stylesheet')
+    link(href='/stylesheets/search_style.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    //div#contain
+    //div#dangerous
+    .container
+        .text-center
+            a#dashboardgotoChatPublic.quick-btn
+                i.fa.fa-comments.fa-2x
+                span chat public
+            a#dashboardgotoUserProfile.quick-btn(href="/users/profile")
+                i.fa.fa-vcard-o.fa-2x
+                span User Profile
+            a#dashboardgotoShareStatus.quick-btn(href="/users/profile")
+                i.fa.fa-user-o.fa-2x
+                span Share Status
+            a#dashboardgotoAnnounce.quick-btn(href="/announcement/page")
+                i.fa.fa-envelope.fa-2x
+                span Announce
+            a#dashboardgotoPoll.quick-btn(href="/poll")
+                i.fa.fa-bar-chart.fa-2x
+                span Poll
+            a#dashboardgotoNearby.quick-btn(href="/nearby")
+                i.fa.fa-map-marker.fa-2x
+                span Nearby
+            a#dashboardgotoAdmin.quick-btn
+                i.fa.fa-users.fa-2x
+                span Admin
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12
+                .panel.panel-info#announcement_panel
+                    .panel-heading
+                        h3.panel-title Announcement
+                    .panel-body
+                        #ann_announcement_panel
+                        #hint_message(style='display:none') There is no announcement
+
+        form.bs-exmpale.bs-example-form(role="form")
+            .row
+                .col-sm-4.col-sm-offset-4.col-xs-12
+                    .input-group
+                        .input-group-btn
+                            button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown")
+                                span#searchfield Username
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a#username(href="#") Username
+                                li
+                                    a#status(href="#") Status
+                        input.form-control#searchwords(type="text")
+                        #dropDownField.input-group-btn.feature-hide
+                            button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                span#statusField(statusIndex=0) Undefiend
+                                span.caret
+                            ul#statusList.dropdown-menu
+                                li
+                                    a(index=0 href="#") Undefined
+                                li
+                                    a(index=1 href="#") OK
+                                li
+                                    a(index=2 href="#") Help
+                                li
+                                    a(index=3 href="#") Emergency
+                        span.input-group-btn
+                            button.btn.btn-default#search(type="button") Go
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12
+                #searchResultPanel.panel.panel-info.listPanel.feature-hide
+                    .panel-heading
+                        h3.panel-title Search Result
+                    .panel-body
+                        #searchResult_List.list-group
+        br
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12
+                .panel.panel-info.listPanel
+                    .panel-heading
+                        h3.panel-title Users Directory
+                    .panel-body
+                        #user_List.list-group
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/directory.js')
+    script(src='/js/esn_directory.js')

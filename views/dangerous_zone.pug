@@ -1,0 +1,17 @@
+extends layout
+
+block links
+    link(rel='stylesheet', type='text/css', href='/stylesheets/dangerous_zone.css')
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+
+block content
+    body
+        include ./sidebar.pug
+        h3 Set Dangerous Zone
+        #map
+        #report_div
+            button#report.btn.btn-danger(type="button") report
+
+        script(src='/socket.io/socket.io.js')
+        script(src = 'js/dangerous_zone.js')
+        script(src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCDd54D1NJddMemeqDk_SNOi_hkbDZBRWk')

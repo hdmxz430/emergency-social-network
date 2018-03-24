@@ -1,0 +1,22 @@
+.quick-btn {
+    background: #eee;
+    -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;
+    box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;
+    color: #444;
+    display: inline-block;
+    height: 80px;
+    margin: 10px;
+    padding-top: 16px;
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+    position: relative;
+}
+
+.quick-btn span {
+    display: block;
+}
+
+.feature-hide{
+    display: none;
+}

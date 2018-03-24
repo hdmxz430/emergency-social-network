@@ -1,0 +1,36 @@
+extends layout
+
+block links
+    link(href='/font-awesome-4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/stylesheets/dashboard.css', rel='stylesheet')
+    link(href='/stylesheets/search_style.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    div#contain
+    .container
+
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12
+                .panel.panel-info.listPanel
+                    .panel-heading
+                        h3.panel-title#createbox Create New Poll
+                    .panel-body#create_box(style="display: none;")
+                        #create_form.list-group
+                        form.bs-exmpale.bs-example-form(role="form")
+                            input.form-control#polltitle(type="text",placeholder="Poll Title")
+                            input.form-control#polldes(type="text",placeholder="Poll Description")
+                            textarea.form-control#polloptions(type="textarea",rows="4" cols="50",placeholder="Poll Options(Sepreate by new line)",style="height: 150px;")
+                            input.form-control#expire(type="datetime-local",value=now)
+                            button.btn.btn-default#create(type="button") Create
+        br
+        .row
+            .col-sm-4.col-sm-offset-4.col-xs-12
+                .panel.panel-info.listPanel
+                    .panel-heading
+                        h3.panel-title Poll Directory
+                    .panel-body
+                        #poll_List.list-group
+
+    script(src='/socket.io/socket.io.js')
+    //script(src='/js/directory.js')
+    script(src='/js/poll.js')

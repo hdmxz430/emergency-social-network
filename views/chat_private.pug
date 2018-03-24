@@ -1,0 +1,57 @@
+extends layout
+
+block links
+    link(rel='stylesheet', type='text/css', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/chatroom.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/AdminLTE.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/search_style.css')
+    
+block content
+    body
+        include ./sidebar.pug
+        div#contain
+        div#dangerous
+        .container
+            section.content
+                form.bs-exmpale.bs-example-form(role="form")
+                    .row
+                        .col-lg-6.col-sm-offset-3
+                            .input-group
+                                .input-group-btn
+                                    button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown")
+                                        span#searchfield Search
+                                        
+                                input.form-control#searchwords(type="text")
+                                
+                                span.input-group-btn
+                                    button.btn.btn-default#search(type="button") Go
+                br
+                .row
+                    .col-sm-8.col-sm-offset-2
+                        .box.box-primary.direct-chat.direct-chat-primary.search_box#searchBox
+                            .box-header.with-border
+                                h3#search_results.box-title Search Results
+                                .box-tools.pull-right
+                                    // to be continued"
+                            .box-body
+                                #searchPubMessages.direct-chat-messages
+                                a#see_more.col-sm-4.col-sm-offset-5.col-xs-10.col-xs-offset-4 see more...
+                .row
+                    .col-sm-8.col-sm-offset-2
+                        .box.box-primary.direct-chat.direct-chat-primary
+                            .box-header.with-border
+                                h3.box-title Welcome:
+                                h3#current_user.box-title=currentUser
+                                .box-tools.pull-right
+                                    // to be continued"
+                            .box-body
+                                #chatMessages.direct-chat-messages(style='height: 544px;')
+                            .box-footer
+                                .form
+                                    .input-group
+                                        input#m.form-control(placeholder='type message', type='text')
+                                        span.input-group-btn
+                                            button#submit.btn.btn-primary(type='submit') Send
+        script(src='/socket.io/socket.io.js')
+        script(src='js/chat_private.js')

@@ -1,0 +1,32 @@
+extends layout
+
+block links
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+
+block content
+    body
+        include ./sidebar.pug
+        .container
+            .panel.panel-info.listPanel
+                .panel-heading
+                    h3.panel-title Report Dangerous Zone
+                .panel-body
+                    .list-group
+                        li.list-group-item
+                            .row
+                                .col-xs-6
+                                    p.text-left(style="margin: 4px 0") Latitude
+                                .col-xs-6
+                                p#latitude.text-right(style='margin: 4px 0')=lat
+                        li.list-group-item
+                            .row
+                                .col-xs-6
+                                    p.text-left(style='margin: 4px 0') Longitude
+                                .col-xs-6
+                                    p#longitude.text-right(style='margin: 4px 0')=lng
+            .input-group
+                textarea#description.form-control(rows="5" cols="200")
+            span.input-group-btn
+                button.btn.btn-default#reportIncident(type="button") Report
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/report_dangerous_zone.js')

@@ -1,0 +1,33 @@
+# setup node environment
+machine:
+  node:
+    version: 8.6.0
+
+# merge master before testing to make sure all tests pass
+# with the updated version of master
+checkout:
+   post:
+   # Sometimes git might ask for your identity and block the build. Add one valid account here:
+    - git config user.email "haot1@andrew.cmu.edu"
+
+# install dependencies
+dependencies:
+  override:
+    - npm install -g grunt-cli mocha istanbul
+    - npm install
+# run tests
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/mocha
+    - grunt test
+    - grunt coverage
+
+post:
+    - mkdir -p $CIRCLE_ARTIFACTS/coverage
+    - mv coverage/ $CIRCLE_ARTIFACTS/coverage
+
+deployment:
+   staging:
+     branch: master
+     heroku:
+       appname: fse-sa4-esn

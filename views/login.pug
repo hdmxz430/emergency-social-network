@@ -1,0 +1,37 @@
+extends layout
+
+block links
+    link(href='/stylesheets/login.css', rel='stylesheet')
+block content
+    .container
+        .row
+            .col-sm-4.col-sm-offset-4.text-center
+                h1#status.lead
+        #infoBoard.col-sm-4.col-sm-offset-4.jumbotron.dialog
+            h1#tron
+            p#description
+            ul#statusList
+            p#commonInfo.lead Would you like to register a new user ?
+            .row
+                .col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
+                    button#_cancel.btn.btn-warning(type="button") Cancel
+                .col-sm-4.col-xs-4
+                    button#_confirm.btn.btn-primary(type="button") Sure
+        form#login_form
+            .row.form-group
+                .col-sm-4.col-sm-offset-4
+                    input#user_name.input_block(type='text' placeholder='User Name')
+            .row
+                #name_feedback.col-sm-3.col-sm-offset-5.col-xs-10.col-xs-offset-2.feedback
+            .row.form-group
+                .col-sm-4.col-sm-offset-4
+                    input#user_psw.input_block(type='password' placeholder='User PassWord')
+                    i#pswVisible.glyphicon.glyphicon-eye-close.feature-i(aria-hidden='true')
+                #password_feedback.col-sm-3.col-sm-offset-5.col-xs-10.col-xs-offset-2.feedback
+            .row
+                .col-sm-4.col-sm-offset-4
+                    button#login.btn-block.btn.btn-primary(type='button') LogIn
+    script(src='/js/reservedUserName.js')
+    script(src='/js/index.js')
+    script(src='/js/libs/validate.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js')

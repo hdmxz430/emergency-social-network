@@ -1,0 +1,18 @@
+const CUser = {
+    STATUS_ONLINE:1,
+    STATUS_OFFLINE: 0,
+
+    PRIVILEGE_USER: 1,
+    PRIVILEGE_COORDINATOR: 2,
+    PRIVILEGE_ADMIN: 3,
+
+    USER_STATUS_UNDEFINED: 0,
+    USER_STATUS_OK: 1,
+
+    ACCOUNT_STATUS_ACTIVE: 1,
+    ACCOUNT_STATUS_INACTIVE: 0
+};
+
+module.exports = {
+    CUser
+};

@@ -1,0 +1,67 @@
+extends layout
+
+block links
+    link(href='/stylesheets/toastr.min.css', rel='stylesheet')
+    link(href='/stylesheets/profile.css', rel='stylesheet')
+block content
+    include ./sidebar.pug
+    .container
+        .panel.panel-info.listPanel
+            .panel-heading
+                h3.panel-title User Profile
+            .panel-body
+                .list-group
+                    li.list-group-item
+                        .row
+                            .col-xs-5
+                                p.text-left(style='margin: 4px 0') Username
+                            .col-xs-7
+                                .input-group
+                                    input#username.form-control(value=user.username)
+                                    span.input-group-btn
+                                        button#submitUsername.btn.btn-info(type='button') submit
+                    li.list-group-item
+                        .row
+                            .col-xs-5
+                                p.text-left(style='margin: 4px 0') Password
+                            .col-xs-7
+                                .input-group
+                                    input#password.form-control(type="password")
+                                    span.input-group-btn
+                                        button#submitPassword.btn.btn-info(type='button') submit
+                    li.list-group-item
+                        .row
+                            .col-xs-6
+                                p#status_text.text-left Account Status
+                            .col-xs-6
+                                .dropdown.text-right
+                                    button.btn.btn-sm.dropdown-toggle#dropdownMenu(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                                        | Account Status
+                                        span.caret
+                                    ul#account_status_list.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu')
+                                        li(index='1')
+                                            a Active
+                                        li(index='0')
+                                            a InActive
+                                        
+                    li.list-group-item
+                        .row
+                            .col-xs-6
+                                p#warn_text.text-left Privilege Level
+                            .col-xs-6
+                                .dropdown.text-right
+                                    button.btn.btn-sm.dropdown-toggle#privilegeLevelDropDown(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                                        | Privilege Level
+                                        span.caret
+                                    ul#privilege_level_list.dropdown-menu.dropdown-menu-right(aria-labelledby='allowWarndropdownMenu')
+                                        li(index='3')
+                                            a Adminstrator
+                                        li(index='2')
+                                            a Coordinator
+                                        li(index='1')
+                                            a Citizen
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/admin_profile.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js')
+                                        
+
