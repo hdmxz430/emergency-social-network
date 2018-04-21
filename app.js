@@ -10,6 +10,9 @@ const favicon = require('serve-favicon');
 /* ImageUC */
 const multer = require('multer');
 
+
+
+
 require('./models/db');
 
 const index = require('./routes/index_route');
